@@ -19,9 +19,46 @@ Recently, Dekker Luberti and Stam examined whether peer-led supplimental instruc
 
 ## Experiment Design 
 
-1. Write a short paragraph that describes the core manipulation employed by the authors. Why do they think that this manipulation might effect outcomes they are going to measure? 
-2. Write a few short paragraphs that describe the three outcome *concepts* the authors are intersted in, and then how they choose to measure those outcomes. Write a short paragraph that identifies other concepts that the authors *could have* be interested in, but did not. Then, critically evaluate (this doesn't mean your conclusions need to be negative about it; but rather that you're thinking critcally about it) whether the ways they authors have chosen to measure outcomes are likely to capture the concepts they are measuring. 
+Experiment Design 
+
+1. Write a short paragraph that describes the core manipulation employed by the authors. Why do they think that this manipulation might affect outcomes they are going to measure? 
+Dekker et al. randomly assigned first-year students to either Supplemental Instruction (treatment) or a wait list (control). Students in the treatment group were invited to join seven weeks of 100-minute, peer-led sessions for a course. Then, students in the control group were told they couldn't attend those sessions but could the next quarter. The MANIPULATION lies in the offer of Supplemental Instruction, not the attendance of it. The authors believe Supplemental Instruction could affect the outcome they measure in the study in three ways.  First, Supplemental Instruction gives students more time each week on collaborative learning tasks, which should help increase grades. Second, it helps students make friends, which can support a sense of belonging. Lastly, working toward shared goals helps build supportive relationships which is assumed to improve mental well-being.
+
+2. Write a few short paragraphs that describe the three outcome *concepts* the authors are interested in, and then how they choose to measure those outcomes. 
+Dekker et al. are interested in three outcomes: academic performance (like grades), mental well-being, and a sense of belonging. Academic Performance is judged on how well students can learn the materials in the given course. So the authors measure each student's exam grade on a scale of 0 to 10. The university reports these grades; a minimum of 5.5 is needed to pass the course.
+​For mental well-being, this is a combined measure of subjective and psychological well-being. To measure mental well-being, the authors use the 7-item Warwick-Edinburgh Mental Well-Being Scale. Students rate how often they feel relaxed or connected to others.​
+Lastly, the sense of belonging measures whether a student feels included in the college community. This is measured on a 6-item scale from Meeuwisse. There are questions like " I feel at home and then they would rate it based on never, sometimes, or all the time. The last two (well-being and belonging) were both measured with surveys at the start of the quarter(to establish the baseline) and at the end, before exams.
+2.Write a short paragraph that identifies other concepts that the authors *could have* be interested in, but did not.
+
+I think the authors could have been interested in other more common outcomes that  Supplemental Instruction is expected to affect. For example, like passing a course, or retention in a class. In my experience as a grad student  tutor these are typically the more traditional ways Supplemental Instruction had been judged.  Also it could have been interesting to measure more specifically into well being. So instead of looking at measuring well-being from a general capacity focusing on things like anxiety or stress maybe through some type of likert scales  before and after it.
+2. Then, critically evaluate (this doesn't mean your conclusions need to be negative about it; but rather that you're thinking critically about it) whether the ways the authors have chosen to measure outcomes are likely to capture the concepts they are measuring. 
+I think that the author's measure captures the general gist of the three concepts, but it feels a tad bit lopsided.  The grade measure fits academic performance well. Since it’s not self-reported, that removes concerns about students possibly misreporting it.   But I think that since the Supplemental Instruction is built around the lectures. This could be an issue because basing the measurement on exam success may reflect mastery of lecture or course content rather than overall learning improvement. Also, in general, exams don't truly reflect the amount of work or account for individuals with learning disabilities.
+
+The paper stated that the well-being scale is moderately reliable at .75. It covered feeling good and functioning well, which reflects how the authors defined the concept. It falls short because the questions focus on the last two weeks. This feels weak in terms of timing because the Supplemental Instruction spanned many more weeks than the measurement accounts for.  Then the stress from before the exam completely could come through and mess with the results.
+​
+Of the three, I would argue Belonging is the weakest because the reliability was only .65. Even the authors admitted that it creates issues with the results. I think it is interesting that part of the measurement was skipping class, which feels more like a behavior than a feeling. Also, since Supplemental Instruction is based on a single course, it doesn’t make sense for students to reflect on courses outside of it.
+
+
 3. Write out the experiment design that the authors employ using the `R, N, X, O, Y` grammar from class. What are the relative strengths of this design, and what are the limitations of this  design? 
+
+
+For the wellbeing outcomes. Both groups were randomly assigned(R) then they had to take the assessment(O), only the top group got the treatment(X). Then both groups have an outcome.  The only difference is for the grades there isn't a pre test so you wouldn't see an O in the columns.
+
+
+R     O    X   Y
+R     O         Y
+
+
+for the grades: 
+
+R        X   Y
+R             Y
+
+
+
+The strength of this study is the random assignment. This removes potential issues like self selection bias. Also the fact that the grades are reported form the university adds a form of authenticity because they aren’t self reported. There's also an ethical nature as the control group also got to experience the support. 
+
+The weakness of this study is the fact that 29% of the treatment never even went to the SI. So then the effects of it can be underestimated  since it was missing more than 20 % of the treatment group. Also the survey percentages were pretty low at 65% which affects overall study.
 
 # Randomization Inference 
 
@@ -30,16 +67,26 @@ The data for the paper is available at the Open Science Foundation's repository.
 Use this data, and randomization inference, to re-analyze the main findings from the paper: 
 
 1. Students who received SI received higher grades; but, 
+
+
+
+
 2. They did not score differently on well-being; or,
+
+
+
+
 3. Belonging scales. 
 
 Please show your code and results for this re-analysis in your homework submission, and include supporting text and interpretation where appropriate to describe and interpret your statistical results. 
 
 In the published analysis, the authors adjust for "demographic covariates". In this reanalysis, you dod not need to make this adjustment. Instead, you can simply model outcomes and treatment. 
 
+
 ```{python}
 df = pl.read_parquet("./data/processed/supplimental_instruction.parquet")
 ```
+
 
 # Power Analysis 
 
